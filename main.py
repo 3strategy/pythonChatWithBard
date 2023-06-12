@@ -1,9 +1,17 @@
+import bardapi
+import os
+import pprint
+
+# set your __Secure-1PSID value to key as a user env variable: '_BARD_API_KEY' Sign out and sign in back again.
+# you may use the below for a temporary workaround is to add the following code :  os.environ['_BARD_API_KEY']='xxxxxxxxxxxx'
+# to verify if you env has the key already, print the env variables:  pprint.pprint(dict(os.environ), width=1)
+
+# set your input text
+input_text = "what is the weather like in Herzliya, in celsius?"
+
+# Send an API request and get a response.
+response = bardapi.core.Bard().get_answer(input_text)
+print(response['content'])
 
 
-def main(name):
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-if __name__ == '__main__':
-    main('PyCharm')
 
